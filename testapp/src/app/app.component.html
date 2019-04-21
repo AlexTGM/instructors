@@ -1,0 +1,18 @@
+<table>
+  <thead>
+    <th>First Name</th>
+    <th>Last Name</th>
+    <th>Delete</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let instructor of (instructors$ | async)" (click)="select(instructor)">
+      <td>{{instructor.first_name}}</td>
+      <td>{{instructor.last_name}}</td>
+      <td><input type="button" value="DELETE" (click)="delete(instructor)"></td>
+    </tr>
+  </tbody>
+</table>
+
+<span>First Name<input type="text" [(ngModel)]="selected.first_name"></span>
+<span>Last Name<input type="text" [(ngModel)]="selected.last_name"></span>
+<input type="button" value="SAVE" (click)="save()">
